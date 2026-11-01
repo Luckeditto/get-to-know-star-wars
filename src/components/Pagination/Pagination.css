@@ -1,0 +1,33 @@
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 1.5rem;
+}
+
+.pagination-botao {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 0.8rem;
+  background: transparent;
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+  color: var(--cor-texto);
+}
+
+.pagination-botao:hover:not(:disabled) {
+  border-color: var(--cor-destaque);
+}
+
+.pagination-botao.pagination-botao-atual {
+  background-color: var(--cor-destaque);
+  border-color: var(--cor-destaque);
+  color: var(--cor-fundo);
+  font-weight: bold;
+}
+
+.pagination-botao:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

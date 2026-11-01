@@ -1,0 +1,69 @@
+.dropdown {
+  position: relative; /* referência para o menu flutuar logo abaixo */
+  display: inline-block;
+}
+
+.dropdown-gatilho {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+  color: var(--cor-texto);
+}
+
+.dropdown-gatilho:hover {
+  border-color: var(--cor-destaque);
+}
+
+.dropdown-gatilho strong {
+  color: var(--cor-destaque);
+}
+
+.dropdown-seta {
+  transition: transform 0.2s;
+}
+
+.dropdown-gatilho[aria-expanded="true"] .dropdown-seta {
+  transform: rotate(180deg); /* a seta vira quando abre */
+}
+
+.dropdown-menu {
+  position: absolute; /* flutua sem empurrar o resto da página */
+  top: calc(100% + 0.3rem);
+  left: 0;
+  z-index: 10; /* fica por cima dos cards */
+  min-width: 100%;
+  margin: 0;
+  padding: 0.3rem;
+  list-style: none;
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.dropdown-opcao {
+  width: 100%;
+  min-height: 40px;
+  padding: 0.5rem 0.8rem;
+  text-align: left;
+  white-space: nowrap;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  color: var(--cor-texto);
+}
+
+.dropdown-opcao:hover,
+.dropdown-opcao:focus-visible {
+  background-color: var(--cor-borda);
+}
+
+.dropdown-opcao.dropdown-opcao-selecionada {
+  color: var(--cor-destaque);
+  font-weight: bold;
+}

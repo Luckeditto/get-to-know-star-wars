@@ -2,11 +2,11 @@
   display: flex;
   gap: 0.25rem;
   border-bottom: 1px solid var(--cor-borda);
-  overflow-x: auto; /* no celular, rola para o lado se não couber */
+  overflow-x: auto; 
 }
 
 .tabs-botao {
-  flex-shrink: 0; /* não espreme o texto */
+  flex-shrink: 0; 
   padding: 0.7rem 1.1rem;
   min-height: 44px;
   background: transparent;

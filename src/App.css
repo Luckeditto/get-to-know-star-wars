@@ -1,7 +1,7 @@
 .botao {
   margin-top: 1rem;
   padding: 0.6rem 1.2rem;
-  min-height: 44px; /* área de toque confortável no celular */
+  min-height: 44px; 
   background-color: transparent;
   color: var(--cor-destaque);
   border: 1px solid var(--cor-destaque);
@@ -17,4 +17,48 @@
 .botao:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+.cabecalho {
+  text-align: center;
+  padding: 2rem 0 1rem;
+}
+
+.conteudo section {
+  margin-bottom: 3rem;
+}
+
+.filmes-grade {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .filmes-grade {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .filmes-grade {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.botao[aria-pressed="true"] {
+  background-color: var(--cor-sucesso);
+  border-color: var(--cor-sucesso);
+  color: var(--cor-fundo);
+}
+
+.rodape {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+  border-top: 1px solid var(--cor-borda);
 }

@@ -40,7 +40,7 @@ function Tabs({ abas = [], rotulo = "Abas" }) {
                             role="tab"
                             aria-selected={estaAtiva}
                             aria-controls={`painel-aba-${aba.id}`}
-                            tabIndex={estaAtiva ? 0 : -1} // Tab entra só na aba ativa; as setas trocam
+                            tabIndex={estaAtiva ? 0 : -1}
                             className={estaAtiva ? "tabs-botao tabs-botao-ativo" : "tabs-botao"}
                             onClick={() => setAbaAtiva(aba.id)}
                             onKeyDown={(evento) => lidarComTeclado(evento, indice)}
@@ -51,7 +51,6 @@ function Tabs({ abas = [], rotulo = "Abas" }) {
                 })}
             </div>
 
-            {/* ===== PAINÉIS: o conteúdo de cada aba; só o ativo aparece ===== */}
             {abas.map((aba) => (
                 <div
                     key={aba.id}

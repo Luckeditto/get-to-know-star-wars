@@ -20,7 +20,7 @@
 .progress-preenchimento {
   height: 100%;
   background-color: var(--cor-jedi);
-  box-shadow: 0 0 10px var(--cor-jedi); /* brilho de sabre de luz */
+  box-shadow: 0 0 10px var(--cor-jedi); 
   border-radius: 999px;
-  transition: width 0.3s ease; /* a barra cresce suavemente */
+  transition: width 0.3s ease; 
 }
