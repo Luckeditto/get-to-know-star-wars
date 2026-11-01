@@ -7,13 +7,14 @@ import FilmCard from "./components/FilmCard/FilmCard";
 import Pagination from "./components/Pagination/Pagination";
 import Dropdown from "./components/Dropdown/Dropdown";
 import { faq, faccoes, filmes, OPCOES_TRILOGIA } from "./data/dados";
-
+import { useToast } from "./context/ToastContext";
 const FILMES_POR_PAGINA = 4;
 
 function App() {
   const [paginaAtual, setPaginaAtual] = useState(1);
   const [assistidos, setAssistidos] = useState([]);
   const [trilogiaFiltro, setTrilogiaFiltro] = useState("Todas");
+  const { mostrarToast } = useToast();
 
   const filmesFiltrados =
     trilogiaFiltro === "Todas"
@@ -27,13 +28,19 @@ function App() {
   const porcentagemAssistida = (assistidos.length / filmes.length) * 100;
 
   function alternarAssistido(id) {
-    setAssistidos((atual) =>
-      atual.includes(id)
-        ? atual.filter((idAssistido) => idAssistido !== id)
-        : [...atual, id]
-    );
+  const jaAssistido = assistidos.includes(id);
 
+  setAssistidos((atual) =>
+    atual.includes(id)
+      ? atual.filter((idAssistido) => idAssistido !== id)
+      : [...atual, id]
+  );
+
+  // Se está marcando o último que faltava, a maratona termina
+  if (!jaAssistido && assistidos.length + 1 === filmes.length) {
+    mostrarToast("sucesso", "Maratona completa! Que a Força esteja com você.");
   }
+}
   function selecionarTrilogia(valor) {
     setTrilogiaFiltro(valor);
     setPaginaAtual(1);

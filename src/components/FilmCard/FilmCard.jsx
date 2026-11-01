@@ -1,6 +1,18 @@
 import "./FilmCard.css";
+import { useToast } from "../../context/ToastContext";
 
 function FilmCard({ filme, assistido, aoAlternarAssistido }) {
+  const { mostrarToast } = useToast();
+
+  function lidarComClique() {
+    aoAlternarAssistido(filme.id);
+    if (assistido) {
+      mostrarToast("info", `"${filme.titulo}" saiu da sua maratona.`);
+    } else {
+      mostrarToast("sucesso", `"${filme.titulo}" marcado como assistido!`);
+    }
+  }
+
   return (
     <article className={assistido ? "film-card film-card-assistido" : "film-card"}>
       <p className="film-card-etiqueta">
@@ -12,11 +24,8 @@ function FilmCard({ filme, assistido, aoAlternarAssistido }) {
       </p>
       <p className="film-card-sinopse">{filme.sinopse}</p>
 
-      <button
-        className="botao"
-        aria-pressed={assistido}
-        onClick={() => aoAlternarAssistido(filme.id)}
-      >
+      {/* aria-pressed: informa ao leitor de tela se o botão está "ligado" */}
+      <button className="botao" aria-pressed={assistido} onClick={lidarComClique}>
         {assistido ? "✔ Assistido" : "Marcar como assistido"}
       </button>
     </article>
