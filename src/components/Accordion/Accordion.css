@@ -1,0 +1,18 @@
+
+.accordion-item{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: normal;
+    color: rgb(246, 246, 250);
+    font-size: 1rem;
+}
+
+.accordion-painel {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+
+.accordion-painel.accordion-painel-open{
+    max-height: 300px;
+}
