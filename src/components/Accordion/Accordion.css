@@ -2,7 +2,7 @@
 .accordion-item{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-style: normal;
-    color: rgb(246, 246, 250);
+    color: var(--cor-texto);
     font-size: 1rem;
 }
 

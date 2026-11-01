@@ -1,0 +1,26 @@
+.progress {
+  width: 100%;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+  color: var(--cor-texto-suave);
+}
+
+.progress-trilho {
+  height: 0.9rem;
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-preenchimento {
+  height: 100%;
+  background-color: var(--cor-jedi);
+  box-shadow: 0 0 10px var(--cor-jedi); /* brilho de sabre de luz */
+  border-radius: 999px;
+  transition: width 0.3s ease; /* a barra cresce suavemente */
+}
