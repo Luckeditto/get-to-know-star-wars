@@ -37,7 +37,7 @@ function Accordion({ itens = [] }) {
                         aria-labelledby={idBotao}
                         aria-hidden={!estaAberto}
                         className={
-                            estaAberto ? 'accordion-painel accordion-painel_open' 
+                            estaAberto ? 'accordion-painel accordion-painel-open' 
                             : 'accordion-painel'}
                         >
                             {item.conteudo}
