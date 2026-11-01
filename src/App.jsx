@@ -37,40 +37,45 @@ function App() {
 
 
   return (
-    <>
-      <header className='cabecalho'>
-        <h1>Get to know Star Wars</h1>
-        <Dropdown />
-      </header>
+  <>
+    <header className="cabecalho">
+      <h1>Get to Know Star Wars</h1>
+      <p>Um guia para quem quer começar a explorar a galáxia.</p>
+    </header>
 
-      <main className='conteudo'>
-        <section aria-labelledby="titulo-faccoes">
-          <h2 id="titulo-faccoes">Facções da galáxia</h2>
-          <Tabs abas={faccoes} rotulo="Facções da galáxia" />
-        </section>
+    <main className="conteudo">
+      {/* 1. Quem é quem */}
+      <section aria-labelledby="titulo-faccoes">
+        <h2 id="titulo-faccoes">Entenda a galáxia</h2>
+        <Tabs abas={faccoes} rotulo="Facções da galáxia" />
+      </section>
 
+      {/* 2. Escolher o que assistir */}
+      <section aria-labelledby="titulo-filmes">
+        <h2 id="titulo-filmes">Os filmes</h2>
+        {/* Dropdown (filtro por trilogia) */}
+        {/* Cards dos filmes da página atual, com botão "Marcar como assistido" */}
+        {/* Pagination */}
+      </section>
 
+      {/* 3. Acompanhar o progresso */}
+      <section aria-labelledby="titulo-maratona">
+        <h2 id="titulo-maratona">Sua maratona</h2>
+        {/* <ProgressBar valor={porcentagemAssistida} rotulo="Filmes assistidos" /> */}
+      </section>
 
-        <section aria-labelledby='titulo-hiperespaco'>
-          <h2 id='titulo-hiperespaco'>Salto para o hiperespaço</h2>
-          <ProgressBar valor={progresso} rotulo='Carregando o hiperdrive' />
-          <button className='botao' onClick={iniciarSalto} disabled={saltando}>
-            {textoBotao}
-          </button>
-        </section>
-        
-        <section aria-labelledby='titulo-faq'>
-          <h2 id='titulo-faq'>Perguntas Frequentes</h2>
-          <Accordion itens={faq} />
-        </section>
-      </main>
+      {/* 4. Dúvidas */}
+      <section aria-labelledby="titulo-faq">
+        <h2 id="titulo-faq">Ainda com dúvidas?</h2>
+        <Accordion itens={faq} />
+      </section>
+    </main>
 
-      <footer>
+    <footer>{/* créditos */}</footer>
 
-      </footer>
-    </>
-
-  )
+    {/* Toasts ficam aqui, fixos no canto da tela */}
+  </>
+);
 }
 
 export default App
