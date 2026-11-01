@@ -3,29 +3,30 @@ import { useState, useEffect } from 'react'
 import Accordion from './components/Accordion/Accordion'
 import Dropdown from './components/Dropdown/Dropdown'
 import ProgressBar from './components/ProgressBar/ProgressBar'
-import {faq} from './data/dados'
+import Tabs from "./components/Tabs/Tabs";
+import { faq, faccoes } from './data/dados'
 function App() {
   const [progresso, setProgresso] = useState(0);
   const [saltando, setSaltando] = useState(false);
 
 
   useEffect(() => {
-    if(!saltando) return;
+    if (!saltando) return;
 
     const id = setInterval(() => {
-      setProgresso((atual) => Math.min(atual + 5,100));
+      setProgresso((atual) => Math.min(atual + 5, 100));
     }, 150);
-    
+
     return () => clearInterval(id);
   }, [saltando]);
 
   useEffect(() => {
-    if (progresso >= 100){
+    if (progresso >= 100) {
       setSaltando(false);
     }
   }, [progresso]);
 
-  function iniciarSalto(){
+  function iniciarSalto() {
     setProgresso(0);
     setSaltando(true);
   }
@@ -34,19 +35,21 @@ function App() {
   if (saltando) textoBotao = "Calculando rota...";
   else if (progresso === 100) textoBotao = "Saltar de novo";
 
-  
+
   return (
     <>
       <header className='cabecalho'>
         <h1>Get to know Star Wars</h1>
-        <Dropdown/>
+        <Dropdown />
       </header>
-      
+
       <main className='conteudo'>
-        <section aria-labelledby='titulo-faq'>
-          <h2 id='titulo-faq'>Perguntas Frequentes</h2>
-          <Accordion itens={faq}/>
+        <section aria-labelledby="titulo-faccoes">
+          <h2 id="titulo-faccoes">Facções da galáxia</h2>
+          <Tabs abas={faccoes} rotulo="Facções da galáxia" />
         </section>
+
+
 
         <section aria-labelledby='titulo-hiperespaco'>
           <h2 id='titulo-hiperespaco'>Salto para o hiperespaço</h2>
@@ -55,13 +58,18 @@ function App() {
             {textoBotao}
           </button>
         </section>
+        
+        <section aria-labelledby='titulo-faq'>
+          <h2 id='titulo-faq'>Perguntas Frequentes</h2>
+          <Accordion itens={faq} />
+        </section>
       </main>
 
       <footer>
 
       </footer>
     </>
-    
+
   )
 }
 

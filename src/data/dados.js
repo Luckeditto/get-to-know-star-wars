@@ -45,3 +45,36 @@ export const faq = [
       "Todos os filmes e séries da franquia estão disponíveis no Disney+.",
   },
 ];
+
+export const faccoes = [
+  {
+    id: "jedi",
+    rotulo: "Jedi",
+    conteudo:
+      "Ordem de guardiões da paz e da justiça na antiga República. Usam o lado luminoso da Força " +
+      "e treinam desde crianças, numa relação de mestre e aprendiz (Padawan). " +
+      "Exemplos: Yoda, Obi-Wan Kenobi e Luke Skywalker.",
+  },
+  {
+    id: "sith",
+    rotulo: "Sith",
+    conteudo:
+      "Seguidores do lado sombrio da Força, que buscam poder alimentado pela raiva e pela ambição. " +
+      "Pela tradição da Regra de Dois, existem apenas um mestre e um aprendiz por vez. " +
+      "Exemplos: Darth Sidious, Darth Vader e Darth Maul.",
+  },
+  {
+    id: "rebeldes",
+    rotulo: "Aliança Rebelde",
+    conteudo:
+      "Movimento que reúne diversos sistemas para derrubar o Império e restaurar a República. " +
+      "Entre seus líderes estão Mon Mothma e Leia Organa.",
+  },
+  {
+    id: "imperio",
+    rotulo: "Império Galáctico",
+    conteudo:
+      "Regime autoritário criado por Palpatine ao fim das Guerras Clônicas. Governa pelo medo, " +
+      "com exércitos de stormtroopers e armas como a Estrela da Morte.",
+  },
+];

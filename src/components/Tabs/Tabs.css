@@ -1,0 +1,38 @@
+.tabs-lista {
+  display: flex;
+  gap: 0.25rem;
+  border-bottom: 1px solid var(--cor-borda);
+  overflow-x: auto; /* no celular, rola para o lado se não couber */
+}
+
+.tabs-botao {
+  flex-shrink: 0; /* não espreme o texto */
+  padding: 0.7rem 1.1rem;
+  min-height: 44px;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: var(--cor-texto-suave);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.tabs-botao:hover {
+  color: var(--cor-texto);
+}
+
+.tabs-botao.tabs-botao-ativo {
+  color: var(--cor-destaque);
+  border-bottom-color: var(--cor-destaque);
+}
+
+.tabs-painel {
+  padding: 1.25rem;
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+}
+
+.tabs-painel p {
+  margin: 0;
+}
